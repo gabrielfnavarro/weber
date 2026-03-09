@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weber | Controle de Pragas & Higienização</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700&family=Outfit:wght@300;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        weber: {
+                            primaria: '#022C22',
+                            destaque: '#82C91E',
+                            card: 'rgba(255, 255, 255, 0.03)'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        * { scroll-behavior: smooth; }
+        body { background-color: #022C22; color: #F1F5F1; overflow-x: hidden; }
+        
+        .floating { animation: float 6s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .glass-card:hover {
+            border-color: #82C91E;
+            background: rgba(130, 201, 30, 0.05);
+            transform: translateY(-5px);
+        }
+
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: #022C22; }
+        ::-webkit-scrollbar-thumb { background: #82C91E; border-radius: 10px; }
+
+        
+    </style>
+</head>
+<body class="font-sans antialiased">
+
+    <header class="fixed top-0 w-full z-50 py-6 px-6 md:px-16 flex justify-between items-center bg-[#022C22]/90 backdrop-blur-md border-b border-white/5">
+        <div class="font-display font-bold text-2xl tracking-tighter uppercase">
+            WEBER<span class="text-weber-destaque">.</span>
+        </div>
+        <a href="#contato" class="bg-weber-destaque text-weber-primaria font-bold px-6 py-2 rounded-full text-[10px] tracking-widest uppercase hover:scale-105 transition">
+            Orçamento
+        </a>
+    </header>
+
+    <main class="relative min-h-screen flex flex-col justify-center pt-32 pb-20 px-6 md:px-16 overflow-hidden">
+        <div class="absolute top-0 left-0 w-[500px] h-[500px] bg-weber-destaque/10 rounded-full blur-[120px] floating"></div>
+        
+        <div class="relative z-10 w-full" data-aos="fade-up">
+            <span class="text-weber-destaque font-bold tracking-[0.4em] text-[10px] uppercase block mb-4">Sinop • Mato Grosso</span>
+            
+            <h1 class="text-5xl md:text-[100px] font-display font-semibold leading-tight md:leading-[0.95] tracking-tight mb-8">
+                Ambiente seguro, <br class="hidden md:block"> 
+                <span class="italic font-light text-weber-destaque">vida saudável.</span>
+            </h1>
+
+            <p class="text-white-400 max-w-xl text-lg font-light leading-relaxed mb-10">
+                Líder no controle de pragas e higienização técnica em Sinop. Unimos tecnologia e prevenção para proteger seu patrimônio.
+            </p>
+            
+            <div class="flex gap-4">
+                <a href="#servicos" class="border border-white/20 px-8 py-4 rounded-xl text-sm font-bold uppercase tracking-widest hover:bg-white hover:text-weber-primaria transition-all">
+                    Ver Serviços
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <section id="servicos" class="py-32 px-6 md:px-16 bg-[#011a14]">
+        <div class="mb-20 text-center md:text-left" data-aos="fade-right">
+            <h2 class="text-4xl md:text-6xl font-display font-semibold">Especialidades <span class="text-weber-destaque italic">Weber</span></h2>
+            <p class="text-white-500 mt-4 max-w-2xl">Soluções definitivas com suporte técnico especializado para residências e empresas.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="glass-card p-10 rounded-[40px]" data-aos="fade-up">
+                <div class="w-14 h-14 bg-weber-destaque/10 flex items-center justify-center rounded-2xl mb-8">
+                    <svg class="w-8 h-8 text-weber-destaque" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold mb-4 uppercase tracking-tighter">Dedetização</h3>
+                <p class="text-gray-400 font-light text-sm leading-relaxed mb-6">Controle rigoroso de insetos e roedores utilizando produtos de baixa toxicidade e alta eficácia residual.</p>
+                <ul class="text-[11px] text-weber-destaque space-y-2 uppercase tracking-widest font-bold opacity-70">
+                    <li>• Baratas e Formigas</li>
+                    <li>• Escorpiões e Aranhas</li>
+                    <li>• Cupins e Brocas</li>
+                </ul>
+            </div>
+
+            <div class="glass-card p-10 rounded-[40px]" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-14 h-14 bg-weber-destaque/10 flex items-center justify-center rounded-2xl mb-8">
+                     <svg class="w-8 h-8 text-weber-destaque" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold mb-4 uppercase tracking-tighter">Desentupimento</h3>
+                <p class="text-gray-400 font-light text-sm leading-relaxed mb-6">Equipamentos rotativos e de alta pressão que limpam a tubulação sem a necessidade de quebrar pisos ou paredes.</p>
+                <ul class="text-[11px] text-weber-destaque space-y-2 uppercase tracking-widest font-bold opacity-70">
+                    <li>• Pias e Ralos</li>
+                    <li>• Vasos Sanitários</li>
+                    <li>• Redes de Esgoto</li>
+                </ul>
+            </div>
+
+            <div class="glass-card p-10 rounded-[40px]" data-aos="fade-up" data-aos-delay="400">
+                <div class="w-14 h-14 bg-weber-destaque/10 flex items-center justify-center rounded-2xl mb-8">
+                    <svg class="w-8 h-8 text-weber-destaque" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-2xl font-bold mb-4 uppercase tracking-tighter">Caixa d'Água</h3>
+                <p class="text-gray-400 font-light text-sm leading-relaxed mb-6">Higienização completa com desinfecção bacteriológica, garantindo a potabilidade da água da sua família.</p>
+                <ul class="text-[11px] text-weber-destaque space-y-2 uppercase tracking-widest font-bold opacity-70">
+                    <li>• Limpeza Mecânica</li>
+                    <li>• Desinfecção Química</li>
+                    <li>• Laudo de Potabilidade</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="py-32 px-6 md:px-16">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-6xl font-display font-semibold mb-6">Solicite seu <br> <span class="text-weber-destaque italic font-light">Orçamento</span></h2>
+            </div>
+
+            <form id="wppForm" class="bg-[#043329] p-6 md:p-12 rounded-[48px] border border-white/5 shadow-2xl space-y-8">
+                <div class="w-full">
+                    <label class="text-[10px] uppercase tracking-widest text-weber-destaque font-bold mb-3 block">Identificação</label>
+                    <input type="text" id="nome" placeholder="Seu nome completo" class="w-full bg-white/5 border border-white/10 p-5 rounded-2xl outline-none focus:border-weber-destaque text-white transition-all" required>
+                </div>
+
+                <div>
+                    <label class="text-[10px] uppercase tracking-widest text-weber-destaque font-bold mb-3 block">Localização em Sinop</label>
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+                        <input type="text" id="rua" placeholder="Rua / Avenida" class="md:col-span-6 w-full bg-white/5 border border-white/10 p-5 rounded-2xl outline-none focus:border-weber-destaque text-white transition-all" required>
+                        <input type="text" id="numero" placeholder="Nº" class="md:col-span-2 w-full bg-white/5 border border-white/10 p-5 rounded-2xl outline-none focus:border-weber-destaque text-white transition-all" required>
+                        <input type="text" id="bairro" placeholder="Bairro" class="md:col-span-4 w-full bg-white/5 border border-white/10 p-5 rounded-2xl outline-none focus:border-weber-destaque text-white transition-all" required>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="flex flex-col">
+                        <label class="text-[10px] uppercase tracking-widest text-weber-destaque font-bold mb-3 block">Tipo de Serviço</label>
+                        <select id="servico" class="w-full bg-[#054538] border border-white/10 p-5 rounded-2xl outline-none focus:border-weber-destaque text-white appearance-none cursor-pointer">
+                            <option>Dedetização</option>
+                            <option>Desentupimento</option>
+                            <option>Limpeza de Caixa d'Água</option>
+                        </select>
+                    </div>
+                    <div class="flex flex-col">
+                        <label class="text-[10px] uppercase tracking-widest text-weber-destaque font-bold mb-3 block">Observações</label>
+                        <textarea id="obs" class="w-full bg-white/5 border border-white/10 p-5 rounded-2xl outline-none focus:border-weber-destaque text-white h-[66px] resize-none transition-all"></textarea>
+                    </div>
+                </div>
+
+                <button type="submit" class="w-full bg-weber-destaque text-weber-primaria font-bold py-6 rounded-2xl hover:brightness-110 transition-all uppercase text-xs tracking-[0.3em] shadow-xl shadow-weber-destaque/10">
+                    Enviar Solicitação via WhatsApp
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="py-10 text-center border-t border-white/5">
+        <p class="text-white-500 text-[10px] tracking-[0.5em] uppercase italic">Weber • Sinop MT</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+
+        document.getElementById('wppForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const campos = ['nome', 'rua', 'numero', 'bairro', 'servico', 'obs'];
+            const dados = {};
+            campos.forEach(c => dados[c] = document.getElementById(c).value);
+            
+            const telefone = "5566999999999"; 
+            const msg = `*ORÇAMENTO WEBER*%0A👤 Cliente: ${dados.nome}%0A🛠️ Serviço: ${dados.servico}%0A🏠 Endereço: ${dados.rua}, ${dados.numero} - ${dados.bairro}%0A📝 Obs: ${dados.obs}`;
+            window.open(`https://wa.me/${telefone}?text=${msg}`, '_blank');
+        });
+    </script>
+</body>
+</html>
