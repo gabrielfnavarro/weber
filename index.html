@@ -7,15 +7,15 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700&family=Outfit:wght@300;600&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
+    <link rel="icon" type="image/png" href="logo2.png">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
                         weber: {
-                            primaria: '#022C22',
-                            destaque: '#82C91E',
+                            primaria: '#03362B', 
+                            destaque: '#98E62E', 
                             card: 'rgba(255, 255, 255, 0.03)'
                         }
                     },
@@ -30,35 +30,52 @@
 
     <style>
         * { scroll-behavior: smooth; }
-        body { background-color: #022C22; color: #F1F5F1; overflow-x: hidden; }
+        body { background-color: #03362B; color: #F1F5F1; overflow-x: hidden; }
         
         .floating { animation: float 6s ease-in-out infinite; }
         @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+
+        .float-shield { animation: floatShield 4s ease-in-out infinite; }
+        @keyframes floatShield {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(5deg); }
+        }
 
         .glass-card {
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.08);
             transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
+            overflow: hidden;
         }
         .glass-card:hover {
-            border-color: #82C91E;
-            background: rgba(130, 201, 30, 0.05);
+            border-color: #98E62E;
+            background: rgba(152, 230, 46, 0.05);
             transform: translateY(-5px);
         }
 
-        ::-webkit-scrollbar { width: 5px; }
-        ::-webkit-scrollbar-track { background: #022C22; }
-        ::-webkit-scrollbar-thumb { background: #82C91E; border-radius: 10px; }
+        /* Marca d'água dentro do card */
+        .card-watermark {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            width: 120px;
+            opacity: 0.05;
+            transform: rotate(-15deg);
+            pointer-events: none;
+        }
 
-        
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: #03362B; }
+        ::-webkit-scrollbar-thumb { background: #98E62E; border-radius: 10px; }
     </style>
 </head>
 <body class="font-sans antialiased">
 
-    <header class="fixed top-0 w-full z-50 py-6 px-6 md:px-16 flex justify-between items-center bg-[#022C22]/90 backdrop-blur-md border-b border-white/5">
-        <div class="font-display font-bold text-2xl tracking-tighter uppercase">
-            WEBER<span class="text-weber-destaque">.</span>
+    <header class="fixed top-0 w-full z-50 py-4 px-6 md:px-16 flex justify-between items-center bg-[#03362B]/90 backdrop-blur-md border-b border-white/5">
+        <div class="flex items-center">
+            <img src="logo.jpeg" alt="Weber Logo" class="h-8 md:h-10 w-auto brightness-110">
         </div>
         <a href="#contato" class="bg-weber-destaque text-weber-primaria font-bold px-6 py-2 rounded-full text-[10px] tracking-widest uppercase hover:scale-105 transition">
             Orçamento
@@ -68,34 +85,41 @@
     <main class="relative min-h-screen flex flex-col justify-center pt-32 pb-20 px-6 md:px-16 overflow-hidden">
         <div class="absolute top-0 left-0 w-[500px] h-[500px] bg-weber-destaque/10 rounded-full blur-[120px] floating"></div>
         
-        <div class="relative z-10 w-full" data-aos="fade-up">
-            <span class="text-weber-destaque font-bold tracking-[0.4em] text-[10px] uppercase block mb-4">Sinop • Mato Grosso</span>
-            
-            <h1 class="text-5xl md:text-[100px] font-display font-semibold leading-tight md:leading-[0.95] tracking-tight mb-8">
-                Ambiente seguro, <br class="hidden md:block"> 
-                <span class="italic font-light text-weber-destaque">vida saudável.</span>
-            </h1>
+        <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-12" data-aos="fade-up">
+            <div class="w-full md:w-2/3">
+                <span class="text-weber-destaque font-bold tracking-[0.4em] text-[10px] uppercase block mb-4">Sinop • Mato Grosso</span>
+                
+                <h1 class="text-5xl md:text-[100px] font-display font-semibold leading-tight md:leading-[0.95] tracking-tight mb-8">
+                    Ambiente seguro, <br class="hidden md:block"> 
+                    <span class="italic font-light text-weber-destaque">vida saudável.</span>
+                </h1>
 
-            <p class="text-white-400 max-w-xl text-lg font-light leading-relaxed mb-10">
-                Líder no controle de pragas e higienização técnica em Sinop. Unimos tecnologia e prevenção para proteger seu patrimônio.
-            </p>
-            
-            <div class="flex gap-4">
-                <a href="#servicos" class="border border-white/20 px-8 py-4 rounded-xl text-sm font-bold uppercase tracking-widest hover:bg-white hover:text-weber-primaria transition-all">
-                    Ver Serviços
-                </a>
+                <p class="text-white/70 max-w-xl text-lg font-light leading-relaxed mb-10">
+                    Líder no controle de pragas e higienização técnica em Sinop. Unimos tecnologia e prevenção para proteger seu patrimônio.
+                </p>
+                
+                <div class="flex gap-4">
+                    <a href="#servicos" class="border border-white/20 px-8 py-4 rounded-xl text-sm font-bold uppercase tracking-widest hover:bg-white hover:text-weber-primaria transition-all">
+                        Ver Serviços
+                    </a>
+                </div>
+            </div>
+
+            <div class="hidden md:block w-1/3">
+                <img src="logo2.png" alt="Escudo Weber" class="w-full max-w-[350px] float-shield drop-shadow-[0_0_50px_rgba(152,230,46,0.2)]">
             </div>
         </div>
     </main>
 
-    <section id="servicos" class="py-32 px-6 md:px-16 bg-[#011a14]">
+    <section id="servicos" class="py-32 px-6 md:px-16 bg-[#02261e]">
         <div class="mb-20 text-center md:text-left" data-aos="fade-right">
             <h2 class="text-4xl md:text-6xl font-display font-semibold">Especialidades <span class="text-weber-destaque italic">Weber</span></h2>
-            <p class="text-white-500 mt-4 max-w-2xl">Soluções definitivas com suporte técnico especializado para residências e empresas.</p>
+            <p class="text-white/50 mt-4 max-w-2xl">Soluções definitivas com suporte técnico especializado para residências e empresas.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div class="glass-card p-10 rounded-[40px]" data-aos="fade-up">
+                <img src="logo2.png" class="card-watermark" alt="">
                 <div class="w-14 h-14 bg-weber-destaque/10 flex items-center justify-center rounded-2xl mb-8">
                     <svg class="w-8 h-8 text-weber-destaque" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"></path>
@@ -111,9 +135,10 @@
             </div>
 
             <div class="glass-card p-10 rounded-[40px]" data-aos="fade-up" data-aos-delay="200">
+                <img src="logo2.png" class="card-watermark" alt="">
                 <div class="w-14 h-14 bg-weber-destaque/10 flex items-center justify-center rounded-2xl mb-8">
-                     <svg class="w-8 h-8 text-weber-destaque" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"></path>
+                    <svg class="w-8 h-8 text-weber-destaque" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                     </svg>
                 </div>
                 <h3 class="text-2xl font-bold mb-4 uppercase tracking-tighter">Desentupimento</h3>
@@ -126,9 +151,10 @@
             </div>
 
             <div class="glass-card p-10 rounded-[40px]" data-aos="fade-up" data-aos-delay="400">
+                <img src="logo2.png" class="card-watermark" alt="">
                 <div class="w-14 h-14 bg-weber-destaque/10 flex items-center justify-center rounded-2xl mb-8">
                     <svg class="w-8 h-8 text-weber-destaque" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4a2 2 0 012-2m16 0h-2M4 13H6m10 0V7a3 3 0 00-6 0v6m4 0h-2"></path>
                     </svg>
                 </div>
                 <h3 class="text-2xl font-bold mb-4 uppercase tracking-tighter">Caixa d'Água</h3>
@@ -148,7 +174,7 @@
                 <h2 class="text-4xl md:text-6xl font-display font-semibold mb-6">Solicite seu <br> <span class="text-weber-destaque italic font-light">Orçamento</span></h2>
             </div>
 
-            <form id="wppForm" class="bg-[#043329] p-6 md:p-12 rounded-[48px] border border-white/5 shadow-2xl space-y-8">
+            <form id="wppForm" class="bg-[#054a3b] p-6 md:p-12 rounded-[48px] border border-white/5 shadow-2xl space-y-8">
                 <div class="w-full">
                     <label class="text-[10px] uppercase tracking-widest text-weber-destaque font-bold mb-3 block">Identificação</label>
                     <input type="text" id="nome" placeholder="Seu nome completo" class="w-full bg-white/5 border border-white/10 p-5 rounded-2xl outline-none focus:border-weber-destaque text-white transition-all" required>
@@ -166,7 +192,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="flex flex-col">
                         <label class="text-[10px] uppercase tracking-widest text-weber-destaque font-bold mb-3 block">Tipo de Serviço</label>
-                        <select id="servico" class="w-full bg-[#054538] border border-white/10 p-5 rounded-2xl outline-none focus:border-weber-destaque text-white appearance-none cursor-pointer">
+                        <select id="servico" class="w-full bg-[#03362B] border border-white/10 p-5 rounded-2xl outline-none focus:border-weber-destaque text-white appearance-none cursor-pointer">
                             <option>Dedetização</option>
                             <option>Desentupimento</option>
                             <option>Limpeza de Caixa d'Água</option>
@@ -174,7 +200,7 @@
                     </div>
                     <div class="flex flex-col">
                         <label class="text-[10px] uppercase tracking-widest text-weber-destaque font-bold mb-3 block">Observações</label>
-                        <textarea id="obs" class="w-full bg-white/5 border border-white/10 p-5 rounded-2xl outline-none focus:border-weber-destaque text-white h-[66px] resize-none transition-all"></textarea>
+                        <textarea id="obs" placeholder="Ex: Presença de pets..." class="w-full bg-white/5 border border-white/10 p-5 rounded-2xl outline-none focus:border-weber-destaque text-white h-[66px] resize-none transition-all"></textarea>
                     </div>
                 </div>
 
@@ -185,8 +211,14 @@
         </div>
     </section>
 
-    <footer class="py-10 text-center border-t border-white/5">
-        <p class="text-white-500 text-[10px] tracking-[0.5em] uppercase italic">Weber • Sinop MT</p>
+   <footer class="py-16 text-center border-t border-white/5 bg-[#02261e]">
+        <div class="flex flex-col items-center gap-6">
+            <img src="logo.jpeg" alt="Weber Logo" class="h-10 w-auto opacity-50 hover:opacity-100 transition-opacity">
+            <div class="space-y-2">
+                <p class="text-weber-destaque text-[10px] tracking-[0.5em] uppercase font-bold">Weber Dedetizadora</p>
+                <p class="text-white/30 text-[9px] tracking-[0.3em] uppercase italic">Sinop • Mato Grosso</p>
+            </div>
+        </div>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
