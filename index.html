@@ -55,7 +55,6 @@
             transform: translateY(-5px);
         }
 
-        /* Marca d'água dentro do card */
         .card-watermark {
             position: absolute;
             bottom: -20px;
@@ -65,6 +64,10 @@
             transform: rotate(-15deg);
             pointer-events: none;
         }
+
+        /* Remove a barra de scroll bugada do textarea */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
         ::-webkit-scrollbar { width: 5px; }
         ::-webkit-scrollbar-track { background: #03362B; }
@@ -114,55 +117,62 @@
     <section id="servicos" class="py-32 px-6 md:px-16 bg-[#02261e]">
         <div class="mb-20 text-center md:text-left" data-aos="fade-right">
             <h2 class="text-4xl md:text-6xl font-display font-semibold">Especialidades <span class="text-weber-destaque italic">Weber</span></h2>
-            <p class="text-white/50 mt-4 max-w-2xl">Soluções definitivas com suporte técnico especializado para residências e empresas.</p>
+            <p class="text-white/50 mt-4 max-w-2xl">Soluções exclusivas e biológicas para Sinop e região.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="glass-card p-10 rounded-[40px]" data-aos="fade-up">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="glass-card p-8 rounded-[40px]" data-aos="fade-up">
                 <img src="logo2.png" class="card-watermark" alt="">
-                <div class="w-14 h-14 bg-weber-destaque/10 flex items-center justify-center rounded-2xl mb-8">
-                    <svg class="w-8 h-8 text-weber-destaque" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"></path>
-                    </svg>
+                <div class="w-12 h-12 bg-weber-destaque/10 flex items-center justify-center rounded-2xl mb-6">
+                    <svg class="w-6 h-6 text-weber-destaque" fill="currentColor" viewBox="0 0 24 24"><path d="M11.622 2.25a.75.75 0 01.756 0 12.001 12.001 0 0011.025 20.153.75.75 0 01-.161 1.488 13.523 13.523 0 01-11.242-6.023 13.523 13.523 0 01-11.242 6.023.75.75 0 01-.161-1.488A12.001 12.001 0 0011.622 2.25z"/></svg>
                 </div>
-                <h3 class="text-2xl font-bold mb-4 uppercase tracking-tighter">Dedetização</h3>
-                <p class="text-gray-400 font-light text-sm leading-relaxed mb-6">Controle rigoroso de insetos e roedores utilizando produtos de baixa toxicidade e alta eficácia residual.</p>
-                <ul class="text-[11px] text-weber-destaque space-y-2 uppercase tracking-widest font-bold opacity-70">
+                <h3 class="text-xl font-bold mb-3 uppercase tracking-tighter">Dedetização</h3>
+                <p class="text-gray-400 font-light text-xs leading-relaxed mb-6">Manejo integrado de pragas com alta eficácia residual e segurança.</p>
+                <ul class="text-[10px] text-weber-destaque space-y-2 uppercase tracking-widest font-bold opacity-70">
                     <li>• Baratas e Formigas</li>
                     <li>• Escorpiões e Aranhas</li>
-                    <li>• Cupins e Brocas</li>
                 </ul>
             </div>
 
-            <div class="glass-card p-10 rounded-[40px]" data-aos="fade-up" data-aos-delay="200">
+            <div class="glass-card p-8 rounded-[40px] border-weber-destaque/40" data-aos="fade-up" data-aos-delay="100">
                 <img src="logo2.png" class="card-watermark" alt="">
- <div class="w-14 h-14 bg-weber-destaque/10 flex items-center justify-center rounded-2xl mb-8">
-                    <svg class="w-8 h-8 text-weber-destaque" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"></path>
-                    </svg>
+                <div class="flex justify-between items-start mb-6">
+                    <div class="w-12 h-12 bg-weber-destaque/20 flex items-center justify-center rounded-2xl">
+                        <svg class="w-6 h-6 text-weber-destaque" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M12 3v18M3 12h18M5.25 5.25l13.5 13.5M18.75 5.25L5.25 18.75"/></svg>
+                    </div>
+                    <span class="bg-weber-destaque text-weber-primaria text-[8px] font-black px-2 py-1 rounded-md uppercase">Bio Exclusivo</span>
                 </div>
-                <h3 class="text-2xl font-bold mb-4 uppercase tracking-tighter">Desentupimento</h3>
-                <p class="text-gray-400 font-light text-sm leading-relaxed mb-6">Equipamentos rotativos e de alta pressão que limpam a tubulação sem a necessidade de quebrar pisos ou paredes.</p>
-                <ul class="text-[11px] text-weber-destaque space-y-2 uppercase tracking-widest font-bold opacity-70">
-                    <li>• Pias e Ralos</li>
-                    <li>• Vasos Sanitários</li>
+                <h3 class="text-xl font-bold mb-3 uppercase tracking-tighter">Controle de Areia</h3>
+                <p class="text-gray-400 font-light text-xs leading-relaxed mb-6">Único na região. Tratamento biológico <span class="text-weber-destaque">sem veneno</span> para areia.</p>
+                <ul class="text-[10px] text-weber-destaque space-y-2 uppercase tracking-widest font-bold opacity-70">
+                    <li>• 100% Produto Biológico</li>
+                    <li>• Seguro para todos</li>
+                </ul>
+            </div>
+
+            <div class="glass-card p-8 rounded-[40px]" data-aos="fade-up" data-aos-delay="200">
+                <img src="logo2.png" class="card-watermark" alt="">
+                <div class="w-12 h-12 bg-weber-destaque/10 flex items-center justify-center rounded-2xl mb-6">
+                    <svg class="w-6 h-6 text-weber-destaque" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                </div>
+                <h3 class="text-xl font-bold mb-3 uppercase tracking-tighter">Desentupimento</h3>
+                <p class="text-gray-400 font-light text-xs leading-relaxed mb-6">Tecnologia de alta pressão para desobstrução sem quebra-quebra.</p>
+                <ul class="text-[10px] text-weber-destaque space-y-2 uppercase tracking-widest font-bold opacity-70">
                     <li>• Redes de Esgoto</li>
+                    <li>• Pias e Ralos</li>
                 </ul>
             </div>
 
-            <div class="glass-card p-10 rounded-[40px]" data-aos="fade-up" data-aos-delay="400">
+            <div class="glass-card p-8 rounded-[40px]" data-aos="fade-up" data-aos-delay="300">
                 <img src="logo2.png" class="card-watermark" alt="">
- <div class="w-14 h-14 bg-weber-destaque/10 flex items-center justify-center rounded-2xl mb-8">
-                    <svg class="w-8 h-8 text-weber-destaque" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"></path>
-                    </svg>
+                <div class="w-12 h-12 bg-weber-destaque/10 flex items-center justify-center rounded-2xl mb-6">
+                    <svg class="w-6 h-6 text-weber-destaque" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M12 21a9 9 0 100-18 9 9 0 000 18zM12 7v5l3 3"/></svg>
                 </div>
-                <h3 class="text-2xl font-bold mb-4 uppercase tracking-tighter">Caixa d'Água</h3>
-                <p class="text-gray-400 font-light text-sm leading-relaxed mb-6">Higienização completa com desinfecção bacteriológica, garantindo a potabilidade da água da sua família.</p>
-                <ul class="text-[11px] text-weber-destaque space-y-2 uppercase tracking-widest font-bold opacity-70">
+                <h3 class="text-xl font-bold mb-3 uppercase tracking-tighter">Caixa d'Água</h3>
+                <p class="text-gray-400 font-light text-xs leading-relaxed mb-6">Higienização técnica profunda com laudo de potabilidade garantido.</p>
+                <ul class="text-[10px] text-weber-destaque space-y-2 uppercase tracking-widest font-bold opacity-70">
+                    <li>• Desinfecção Bacteriana</li>
                     <li>• Limpeza Mecânica</li>
-                    <li>• Desinfecção Química</li>
-                    <li>• Laudo de Potabilidade</li>
                 </ul>
             </div>
         </div>
@@ -194,13 +204,14 @@
                         <label class="text-[10px] uppercase tracking-widest text-weber-destaque font-bold mb-3 block">Tipo de Serviço</label>
                         <select id="servico" class="w-full bg-[#03362B] border border-white/10 p-5 rounded-2xl outline-none focus:border-weber-destaque text-white appearance-none cursor-pointer">
                             <option>Dedetização</option>
+                            <option>Controle de Areia (Bio)</option>
                             <option>Desentupimento</option>
                             <option>Limpeza de Caixa d'Água</option>
                         </select>
                     </div>
                     <div class="flex flex-col">
                         <label class="text-[10px] uppercase tracking-widest text-weber-destaque font-bold mb-3 block">Observações</label>
-                        <textarea id="obs" placeholder="Ex: Presença de pets..." class="w-full bg-white/5 border border-white/10 p-5 rounded-2xl outline-none focus:border-weber-destaque text-white h-[66px] resize-none transition-all"></textarea>
+                        <textarea id="obs" placeholder="Ex: Presença de pets..." class="no-scrollbar w-full bg-white/5 border border-white/10 p-5 rounded-2xl outline-none focus:border-weber-destaque text-white h-[66px] resize-none transition-all"></textarea>
                     </div>
                 </div>
 
